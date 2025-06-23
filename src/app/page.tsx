@@ -20,10 +20,13 @@ export default function Home() {
   useLayoutEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import('locomotive-scroll')).default;
-      const scroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true
-      });
+      const el = document.querySelector('[data-scroll-container]');
+      if (el instanceof HTMLElement) {
+        const scroll = new LocomotiveScroll({
+          el,
+          smooth: true
+        });
+      }
     })(); // Falta esta invocación
   }, []);
 

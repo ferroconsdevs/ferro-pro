@@ -7,9 +7,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function Destacados() {
     const [selectedProject, setSelectedProject] = useState(0);
-    const container = useRef(null);
-    const horizontalContainer = useRef(null);
-    const firstProductContent = useRef(null);
+    const container = useRef<HTMLDivElement>(null);
+    const horizontalContainer = useRef<HTMLDivElement>(null);
+    const firstProductContent = useRef<HTMLDivElement>(null);
 
     const productos = [
         {
@@ -39,6 +39,7 @@ export default function Destacados() {
         gsap.registerPlugin(ScrollTrigger);
 
         let ctx = gsap.context(() => {
+            if (!horizontalContainer.current) return;
             const sections = horizontalContainer.current.children;
             const firstProductContentEl = firstProductContent.current;
             const totalScrollWidth = horizontalContainer.current.scrollWidth;

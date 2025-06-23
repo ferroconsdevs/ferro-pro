@@ -57,7 +57,7 @@ const ContactSection = () => {
     return () => clearInterval(interval)
   }, [isAutoPlaying, experts.length])
 
-  const goToSlide = (index) => {
+  const goToSlide = (index: number) => {
     setCurrentSlide(index)
     setIsAutoPlaying(false)
     setTimeout(() => setIsAutoPlaying(true), 10000) // Reanudar auto-play después de 10s
@@ -114,7 +114,7 @@ const ContactSection = () => {
                 const position = getCardPosition(index)
                 
                 // Clases según la posición
-                const getCardClasses = (pos) => {
+                const getCardClasses = (pos: string) => {
                   const baseClasses = "absolute transition-all duration-500 ease-in-out"
                   
                   switch (pos) {
@@ -147,7 +147,7 @@ const ContactSection = () => {
                           className="rounded-full object-cover border-4 border-white shadow-lg transition-all duration-300"
                           onError={(e) => {
                             // Fallback en caso de error de imagen
-                            e.target.src = '/img/img-profile.jpg'
+                            (e.target as HTMLImageElement).src = '/img/img-profile.jpg'
                           }}
                         />
                       </div>
