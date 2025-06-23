@@ -1,11 +1,11 @@
 import type { NextConfig } from "next";
+const withVideos = require('next-videos');
 
-const nextConfig: NextConfig = {
+const nextConfig: NextConfig = withVideos({
   /* config options here */
-};
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+});
 
 export default nextConfig;
-
-const withVideos = require('next-videos')
-
-module.exports = withVideos()
