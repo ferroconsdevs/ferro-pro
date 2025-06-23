@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,27 +13,27 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const axiforma = localFont({
-  src: [
-    {
-      path: "../../public/font/axiforma/Axiforma-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/font/axiforma/Axiforma-Medium.woff2", 
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../public/font/axiforma/Axiforma-Bold.woff2",
-      weight: "700", 
-      style: "normal",
-    },
-    // Agrega más variantes según tengas
-  ],
-  variable: "--font-axiforma",
-});
+// const axiforma = localFont({
+//   src: [
+//     {
+//       path: "../../public/font/axiforma/Axiforma-Regular.woff2",
+//       weight: "400",
+//       style: "normal",
+//     },
+//     {
+//       path: "../../public/font/axiforma/Axiforma-Medium.woff2", 
+//       weight: "500",
+//       style: "normal",
+//     },
+//     {
+//       path: "../../public/font/axiforma/Axiforma-Bold.woff2",
+//       weight: "700", 
+//       style: "normal",
+//     },
+//     // Agrega más variantes según tengas
+//   ],
+//   variable: "--font-axiforma",
+// });
 
 export const metadata: Metadata = {
   title: "FerroconsPRO",
@@ -51,7 +51,8 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${axiforma.variable} antialiased`}
+        // ${axiforma.variable}
+        className={` antialiased`}
       >
         {children}
       </body>
